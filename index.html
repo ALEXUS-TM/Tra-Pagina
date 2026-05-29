@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Electrónica Básica</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial, sans-serif;
+background:#0d1117;
+color:#e6edf3;
+display:flex;
+line-height:1.7;
+overflow-x:hidden;
+}
+
+/* ========================= */
+/* EFECTO LUZ */
+/* ========================= */
+
+.glow{
+position:fixed;
+width:300px;
+height:300px;
+background:radial-gradient(circle, rgba(255,0,0,0.18) 0%, transparent 70%);
+pointer-events:none;
+border-radius:50%;
+transform:translate(-50%, -50%);
+z-index:0;
+}
+
+/* ========================= */
+/* SIDEBAR */
+/* ========================= */
+
+.sidebar{
+width:260px;
+height:100vh;
+position:fixed;
+left:0;
+top:0;
+background:#111827;
+padding:30px 20px;
+overflow-y:auto;
+border-right:1px solid #1f2937;
+}
+
+.sidebar h2{
+color:#ff2d2d;
+margin-bottom:20px;
+font-size:22px;
+}
+
+.sidebar a{
+display:block;
+color:#cbd5e1;
+text-decoration:none;
+margin:10px 0;
+transition:0.3s;
+font-size:15px;
+}
+
+.sidebar a:hover{
+color:#ff2d2d;
+transform:translateX(5px);
+}
+
+/* ========================= */
+/* CONTENIDO */
+/* ========================= */
+
+.main{
+margin-left:260px;
+width:calc(100% - 260px);
+padding:40px;
+position:relative;
+z-index:1;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+background:#161b22;
+padding:40px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,0,0,0.4);
+border:1px solid #1f2937;
+}
+
+header{
+display:flex;
+justify-content:flex-end;
+margin-bottom:30px;
+}
+
+header a{
+background:#ff2d2d;
+color:white;
+padding:10px 20px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+header a:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px #ff2d2d;
+}
+
+img{
+display:block;
+margin:auto;
+margin-bottom:30px;
+border-radius:15px;
+}
+
+h1{
+text-align:center;
+margin-bottom:40px;
+color:#ff2d2d;
+font-size:40px;
+}
+
+h2{
+margin-top:50px;
+margin-bottom:20px;
+color:#ff2d2d;
+border-bottom:2px solid #ff2d2d;
+padding-bottom:10px;
+}
+
+h3{
+margin-top:30px;
+color:#ff6b6b;
+}
+
+p{
+margin-top:10px;
+color:#d1d5db;
+text-align:justify;
+}
+
+/* ========================= */
+/* TARJETAS */
+/* ========================= */
+
+.card{
+background:#0f172a;
+padding:25px;
+margin-top:25px;
+border-radius:15px;
+border:1px solid #1e293b;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 15px rgba(255,0,0,0.25);
+}
+
+/* ========================= */
+/* BOTONES */
+/* ========================= */
+
+button{
+margin-top:15px;
+padding:10px 20px;
+background:#ff2d2d;
+color:white;
+border:none;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 10px #ff2d2d;
+}
+
+/* ========================= */
+/* INFO OCULTA */
+/* ========================= */
+
+.extra{
+display:none;
+margin-top:15px;
+background:#111827;
+padding:15px;
+border-radius:10px;
+}
+
+/* ========================= */
+/* SLIDER LED */
+/* ========================= */
+
+.slider-container{
+margin-top:40px;
+padding:30px;
+background:#0f172a;
+border-radius:20px;
+border:1px solid #1e293b;
+text-align:center;
+}
+
+.led{
+width:120px;
+height:120px;
+background:red;
+border-radius:50%;
+margin:20px auto;
+box-shadow:0 0 10px red;
+transition:0.2s;
+}
+
+/* ========================= */
+/* ANIMACIONES */
+/* ========================= */
+
+.container *{
+animation:fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+footer{
+margin-top:50px;
+text-align:center;
+color:#9ca3af;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<div class="sidebar">
+
+<h2>ÍNDICE</h2>
+
+<a href="#u1">Unidad 1</a>
+<a href="#u2">Unidad 2</a>
+<a href="#u3">Unidad 3</a>
+<a href="#u4">Unidad 4</a>
+<a href="#interactivo">Interacción</a>
+
+</div>
+
+<div class="main">
+
+<div class="container">
+
+<header>
+<a href="#" target="_blank">VOLVER</a>
+</header>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Electronic_components.jpg/800px-Electronic_components.jpg" width="350">
+
+<h1>Electrónica Básica</h1>
+
+<p>
+Esta página presenta los conceptos fundamentales de electrónica de manera visual e interactiva.
+</p>
+
+<h2 id="u1">Unidad 1: Semiconductores y Diodos</h2>
+
+<div class="card">
+
+<h3>Semiconductores</h3>
+
+<p>
+Son materiales capaces de comportarse como conductores o aislantes dependiendo de las condiciones eléctricas.
+</p>
+
+<button onclick="toggleInfo('semi')">Mostrar Aplicación</button>
+
+<div class="extra" id="semi">
+Los semiconductores son utilizados en procesadores, memorias RAM, celulares y computadores.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Unión PN</h3>
+
+<p>
+Es la unión entre material tipo P y tipo N que permite controlar el flujo de corriente.
+</p>
+
+<button onclick="toggleInfo('pn')">Mostrar Analogía</button>
+
+<div class="extra" id="pn">
+Funciona como una puerta que deja pasar corriente en una sola dirección.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Diodos</h3>
+
+<p>
+Componentes electrónicos que permiten el paso de corriente en un solo sentido.
+</p>
+
+</div>
+
+<div class="slider-container" id="interactivo">
+
+<h2>Control de Brillo LED</h2>
+
+<p>
+Mueve el slider para controlar el brillo del LED.
+</p>
+
+<input type="range" min="0" max="100" value="50" id="slider">
+
+<div class="led" id="led"></div>
+
+<p id="valor">Brillo: 50%</p>
+
+</div>
+
+<footer>
+Página creada para proyecto académico de Electrónica Básica
+</footer>
+
+</div>
+</div>
+
+<script>
+
+/* EFECTO LUZ */
+
+const glow = document.querySelector('.glow');
+
+document.addEventListener('mousemove', (e) => {
+
+glow.style.left = e.clientX + 'px';
+glow.style.top = e.clientY + 'px';
+
+});
+
+/* MOSTRAR INFO */
+
+function toggleInfo(id){
+
+const element = document.getElementById(id);
+
+if(element.style.display === "block"){
+element.style.display = "none";
+}else{
+element.style.display = "block";
+}
+
+}
+
+/* SLIDER LED */
+
+const slider = document.getElementById('slider');
+const led = document.getElementById('led');
+const valor = document.getElementById('valor');
+
+slider.addEventListener('input', ()=>{
+
+let brightness = slider.value;
+
+led.style.opacity = brightness / 100;
+
+led.style.boxShadow = `0 0 ${brightness}px red`;
+
+valor.innerText = `Brillo: ${brightness}%`;
+
+});
+
+</script>
+
+</body>
+</html>
